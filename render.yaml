@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: django-social-media
+    env: python
+    pythonVersion: 3.12.3
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn core.wsgi:application
