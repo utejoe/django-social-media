@@ -1,7 +1,9 @@
 services:
   - type: web
     name: django-social-media
-    env: python
-    pythonVersion: 3.12.3
+    runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn core.wsgi:application
+    startCommand: gunicorn social_book.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: social_book.settings
